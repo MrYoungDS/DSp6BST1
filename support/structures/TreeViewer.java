@@ -5,13 +5,16 @@ import java.util.Queue;
 
 import config.Configuration;
 
+/**
+ * This class creates a .dot file for the Graphvix graph visualization program
+ * available at <a href="https://www.graphviz.org/">graphviz.org</a>
+ */
 public class TreeViewer {
-
 	public static <T> String toDotFormat(BinaryTreeNode<T> root) {
 		// header
 		int count = 0;
-		String dot = "digraph G { \n";
-		dot += "graph [ordering=\"out\"]; \n";
+		StringBuilder dot = new StringBuilder("digraph G { \n");
+		dot.append("graph [ordering=\"out\"]; \n");
 		// iterative traversal
 		Queue<BinaryTreeNode<T>> queue = new LinkedList<>();
 		queue.add(root);
@@ -20,31 +23,27 @@ public class TreeViewer {
 			cursor = queue.remove();
 			if (cursor.hasLeftChild()) {
 				// add edge from cursor to left child
-				dot += cursor.getData().toString() + " -> "
-						+ cursor.getLeftChild().getData().toString() + ";\n";
+				dot.append(cursor.getData().toString()).append(" -> ").append(cursor.getLeftChild().getData().toString()).append(";\n");
 				queue.add(cursor.getLeftChild());
 			} else {
 				// add dummy node
-				dot += "node" + count + " [shape=point];\n";
-				dot += cursor.getData().toString() + " -> " + "node" + count
-						+ ";\n";
+				dot.append("node").append(count).append(" [shape=point];\n");
+				dot.append(cursor.getData().toString()).append(" -> ").append("node").append(count).append(";\n");
 				count++;
 			}
 			if (cursor.hasRightChild()) {
 				// add edge from cursor to right child
-				dot += cursor.getData().toString() + " -> "
-						+ cursor.getRightChild().getData().toString() + ";\n";
+				dot.append(cursor.getData().toString()).append(" -> ").append(cursor.getRightChild().getData().toString()).append(";\n");
 				queue.add(cursor.getRightChild());
 			} else {
 				// add dummy node
-				dot += "node" + count + " [shape=point];\n";
-				dot += cursor.getData().toString() + " -> " + "node" + count
-						+ ";\n";
+				dot.append("node").append(count).append(" [shape=point];\n");
+				dot.append(cursor.getData().toString()).append(" -> ").append("node").append(count).append(";\n");
 				count++;
 			}
 		}
-		dot += "};";
-		return dot;
+		dot.append("};");
+		return dot.toString();
 	}
 
 	private static final <T> BinaryTreeNode<T> node(BinaryTreeNode<T> left,
@@ -56,11 +55,19 @@ public class TreeViewer {
 		BinaryTreeNode<Integer> tree =
 				node(
 						node(
-								node(null, 1, null), 3, node(null, 2, null)),
+								node(null, 1, null),
+								3,
+								node(null, 2, null)
+						),
 						5,
 						node(
 								node(
-										node(null, 4, null), 1, null), 19, null));
+										node(null, 4, null),
+										1,
+										null),
+								19,
+								null)
+				);
 		System.out.println(toDotFormat(tree));
 	}
 }

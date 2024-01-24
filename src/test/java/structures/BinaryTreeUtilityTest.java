@@ -93,7 +93,8 @@ public class BinaryTreeUtilityTest {
 						1,
 						null),
 					19,
-					null));
+					null)
+		);
 	}
 	
 	private BinaryTreeNode<Integer> initRoot4(){
@@ -131,10 +132,17 @@ public class BinaryTreeUtilityTest {
 		return
 				node(
 						node(
-							node(null, 1, null), 3, node(null, 4, null)),
+							node(null, 1, null),
+								3,
+								node(null, 4, null)
+						),
 						5,
 						node(
-								node(null, 7, null), 19, node(null, 25, null)));
+								node(null, 7, null),
+								19,
+								node(null, 25, null)
+						)
+				);
 	}
 
 	private BinaryTreeNode<String> initRootString(){
@@ -237,6 +245,7 @@ public class BinaryTreeUtilityTest {
 		//                    /
 		//                   4
 		assertFalse(utility.isBalanced(root3, 0));
+		// consider the node with 19
 		assertFalse(utility.isBalanced(root3, 1));
 		assertTrue(utility.isBalanced(root3, 2));
 
@@ -271,7 +280,8 @@ public class BinaryTreeUtilityTest {
 		//          "chocolates"
 		assertFalse(utility.isBalanced(rootString, 0));
 		assertFalse(utility.isBalanced(rootString, 1));
-		assertTrue(utility.isBalanced(rootString, 2));
+		// consider the node with "is"
+		assertFalse(utility.isBalanced(rootString, 2));
 
 		assertTrue(utility.isBalanced(largeTree, 0));
 		assertTrue(utility.isBalanced(largeTree, 1));
@@ -319,6 +329,17 @@ public class BinaryTreeUtilityTest {
 		//            / \       /  \
 		//           1   4     7    25
 		assertTrue(utility.isBST(root5));
+
+		//               "life"
+		//              /      \
+		//          "is"      "like"
+		//           /            \
+		//         "a"           "of"
+		//          \
+		//         "box"
+		//            \
+		//          "chocolates"
+		assertTrue(utility.isBST(rootString));
 	}
 	
 	@Test

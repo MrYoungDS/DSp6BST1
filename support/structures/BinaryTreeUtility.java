@@ -13,13 +13,11 @@ public interface BinaryTreeUtility {
 	 * traveled from {@code root} to some child {@link BinaryTreeNode}. For
 	 * example:
 	 * </p>
-	 *
 	 * <pre>
 	 * noChildren ->  A
 	 *
 	 * getDepth(noChildren); // returns 0
 	 * </pre>
-	 *
 	 * <pre>
 	 * someChildren ->  A
 	 *                /   \
@@ -31,7 +29,6 @@ public interface BinaryTreeUtility {
 	 *
 	 * getDepth(someChildren); // returns 3
 	 * </pre>
-	 *
 	 * @param root
 	 *            the root {@link BinaryTreeNode} to examine
 	 * @throws NullPointerException
@@ -45,7 +42,6 @@ public interface BinaryTreeUtility {
 	 * depth of each node's children differs by at most some tolerance. Given a
 	 * {@link BinaryTreeNode} and a tolerance, returns {@code true} if
 	 * {@code root} is balanced and {@code false} otherwise.
-	 *
 	 * @param root
 	 *            the root {@link BinaryTreeNode} to examine
 	 * @param tolerance the maximum tolerance to decide if the tree is balanced
@@ -72,7 +68,6 @@ public interface BinaryTreeUtility {
 	 * Given a {@link BinaryTreeNode}, returns {@code true} if {@code root} is a
 	 * Binary Search Tree and {@code false} otherwise.
 	 * </p>
-	 *
 	 * @param root
 	 *            the {@link BinaryTreeNode} to examine
 	 * @return {@code true} if {@code root} is a Binary Search Tree and
@@ -100,7 +95,6 @@ public interface BinaryTreeUtility {
 	 * If the data in the underlying {@link BinaryTreeNode} or its children is
 	 * modified, using the {@link Iterator} is unknown.
 	 * </p>
-	 *
 	 * @param root
 	 *            the root {@link BinaryTreeNode} to use for this
 	 *            {@link Iterator}
@@ -128,7 +122,6 @@ public interface BinaryTreeUtility {
 	 * If the data in the underlying {@link BinaryTreeNode} or its children is
 	 * modified, using the {@link Iterator} is unknown.
 	 * </p>
-	 *
 	 * @param root
 	 *            the root {@link BinaryTreeNode} to use for this
 	 *            {@link Iterator}
@@ -156,7 +149,6 @@ public interface BinaryTreeUtility {
 	 * If the data in the underlying {@link BinaryTreeNode} or its children is
 	 * modified, using the {@link Iterator} is unknown.
 	 * </p>
-	 *
 	 * @param root
 	 *            the root {@link BinaryTreeNode} to use for this
 	 *            {@link Iterator}
