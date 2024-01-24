@@ -46,9 +46,12 @@ The `BinaryTreeUtility` interface provides basic functions for working with a bi
 **Depth** -- The depth of the tree is the maximum level of any leaf node in the tree.  Recall that the level
 of a node begins at zero for the root of a tree with no children.  A child of the root is at level 1.
 
-**Balance** -- The balance of a tree measures how close it is to a full or complete tree.  You will implement
-the method `isBalanced(BinaryTreeNode<T> root, int tolerance)` which determines whether the maximum difference
-in the depth of any two children is no larger than the given tolerance value.
+**Balance** -- The balance of a tree measures how close it is to a full or complete tree.  The typical definition
+of balance for a tree is that, for every node in the tree, the height of the left subtree can differ from the
+height of the right subtree by at most 1. This corresponds to a tolerance of 1 in the version that we will build,
+but our method will be more general. You will implement `isBalanced(BinaryTreeNode<T> root, int tolerance)`,
+which determines whether the maximum difference in the depth of any two children is no larger than the given
+tolerance value.
 
 **Testing the BST property** -- Recall that a BST is a binary tree that also satisfies a special sorting property:
 if all elements in left subtree of any node X are less than or equal to node X and all nodes in the right subtree
@@ -59,12 +62,13 @@ recursive solution, but it requires some thought.
 
 **Recursive Preorder Iterator** -- There is a class provided that generates a preorder iterator for the binary tree,
 `structures/PreorderIterator`, that uses a stack that gets used for the `hasNext` and `next` methods. (The class
-actually uses a `Deque`, but it is being used as a stack.) Build a different version of this class, using recursion.
-This is essentially using the call stack instead of an instance field stack.
+actually uses a `Deque`, but it is being used as a stack.) Build a different version of this class, using recursive
+methods. This is essentially using the call stack instead of an instance field stack.
 
 **Bonus Assignment - more Iterators** -- If you are looking for more challenge, implement the methods
 `getInorderIterator` and `getPostorderIterator`, either by building additional classes in the `structures`
-package, or using inner classes.
+package, or using inner classes. They are not that different from the preorder iterator...but there is a
+more complicated way to traverse a binary tree...
 
 **Feeling ambitious?**<br>
 See if you can make a level-order iterator!
