@@ -4,11 +4,16 @@ import java.util.Deque;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class PreOrderIterator<T> implements Iterator<T> {
+/**
+ * Sample implementation of a stack-based preorder iterator.
+ * This can also be done using recursion.
+ * @param <T> the type parameter for the elements of the tree nodes
+ */
+public class PreorderIterator<T> implements Iterator<T> {
 	
 	private final Deque<BinaryTreeNode<T>> stack;
 	
-	public PreOrderIterator(BinaryTreeNode<T> root){
+	public PreorderIterator(BinaryTreeNode<T> root){
 		if (root == null) {
 			throw new NullPointerException();
 		}

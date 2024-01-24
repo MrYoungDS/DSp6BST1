@@ -1,16 +1,12 @@
 package config;
 
-import structures.BinarySearchTree;
 import structures.BinaryTreeNode;
 import structures.BinaryTreeUtility;
-
 
 /**
  * This class acts as a configuration file which tells the testing framework
  * which implementation you want us to use when we grade your assignment.
- * 
  * @author jcollard jddevaug
- * 
  */
 public class Configuration {
 
@@ -19,10 +15,6 @@ public class Configuration {
 	}
 	
 	public static BinaryTreeUtility createBinaryTreeUtility(){
-		return null;
-	}
-	
-	public static <T extends Comparable<? super T>> BinarySearchTree<T> createBinarySearchTree(){
 		return null;
 	}
 }

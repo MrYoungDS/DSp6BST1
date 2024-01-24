@@ -3,122 +3,35 @@ package structures;
 import java.util.Iterator;
 
 /**
- * A {@link BinaryTreeUtility} provides utility methods for
- * {@link BinaryTreeNode}s
- * 
+ * A {@link BinaryTreeUtility} provides utility methods for a {@link BinaryTreeNode}
  * @author jcollard jddevaug
  */
 public interface BinaryTreeUtility {
-
-	/**
-	 * <p>
-	 * Creates a new {@link Iterator} that traverses the specified
-	 * {@link BinaryTreeNode} in pre-order.
-	 * </p>
-	 * <p>
-	 * The remove method of the returned {@link Iterator} is not supported and
-	 * any call to it will result in an {@link UnsupportedOperationException}.
-	 * </p>
-	 * <p>
-	 * This method is guaranteed to return in O(1) time. That is, it should not
-	 * compute the entire order of traversal ahead of time.
-	 * </p>
-	 * <p>
-	 * If the data in the underlying {@link BinaryTreeNode} or its children is
-	 * modified, using the {@link Iterator} is unknown.
-	 * </p>
-	 * 
-	 * @param root
-	 *            the root {@link BinaryTreeNode} to use for this
-	 *            {@link Iterator}
-	 * @return a new {@link Iterator} that traverses the specified
-	 *         {@link BinaryTreeNode} in pre-order.
-	 * @throws NullPointerException
-	 *             if root is {@code null}
-	 */
-	<T> Iterator<T> getPreOrderIterator(BinaryTreeNode<T> root);
-
-	/**
-	 * <p>
-	 * Creates a new {@link Iterator} that traverses the specified
-	 * {@link BinaryTreeNode} in in-order.
-	 * </p>
-	 * <p>
-	 * The remove method of the returned {@link Iterator} is not supported and
-	 * any call to it will result in an {@link UnsupportedOperationException}.
-	 * </p>
-	 * <p>
-	 * This method is guaranteed to return in O(1) time. That is, it should not
-	 * compute the entire order of traversal ahead of time.
-	 * </p>
-	 * <p>
-	 * If the data in the underlying {@link BinaryTreeNode} or its children is
-	 * modified, using the {@link Iterator} is unknown.
-	 * </p>
-	 * 
-	 * @param root
-	 *            the root {@link BinaryTreeNode} to use for this
-	 *            {@link Iterator}
-	 * @return a new {@link Iterator} that traverses the specified
-	 *         {@link BinaryTreeNode} in in-order.
-	 * @throws NullPointerException
-	 *             if root is {@code null}
-	 */
-	<T> Iterator<T> getInOrderIterator(BinaryTreeNode<T> root);
-
-	/**
-	 * <p>
-	 * Creates a new {@link Iterator} that traverses the specified
-	 * {@link BinaryTreeNode} in post-order.
-	 * </p>
-	 * <p>
-	 * The remove method of the returned {@link Iterator} is not supported and
-	 * any call to it will result in an {@link UnsupportedOperationException}.
-	 * </p>
-	 * <p>
-	 * This method is guaranteed to return in O(1) time. That is, it should not
-	 * compute the entire order of traversal ahead of time.
-	 * </p>
-	 * <p>
-	 * If the data in the underlying {@link BinaryTreeNode} or its children is
-	 * modified, using the {@link Iterator} is unknown.
-	 * </p>
-	 * 
-	 * @param root
-	 *            the root {@link BinaryTreeNode} to use for this
-	 *            {@link Iterator}
-	 * @return a new {@link Iterator} that traverses the specified
-	 *         {@link BinaryTreeNode} in post-order.
-	 * @throws NullPointerException
-	 *             if root is {@code null}
-	 */
-	<T> Iterator<T> getPostOrderIterator(BinaryTreeNode<T> root);
-
 	/**
 	 * <p>
 	 * Given a {@link BinaryTreeNode} computes the maximum distance that can be
 	 * traveled from {@code root} to some child {@link BinaryTreeNode}. For
 	 * example:
 	 * </p>
-	 * 
+	 *
 	 * <pre>
 	 * noChildren ->  A
-	 * 
+	 *
 	 * getDepth(noChildren); // returns 0
 	 * </pre>
-	 * 
+	 *
 	 * <pre>
 	 * someChildren ->  A
-	 *                /   \ 
+	 *                /   \
 	 *               B     C <- depth 1
-	 *                    / 
+	 *                    /
 	 *                   D   <- depth 2
 	 *                  / \
 	 *                 E   F <- depth 3
-	 *                 
+	 *
 	 * getDepth(someChildren); // returns 3
 	 * </pre>
-	 * 
+	 *
 	 * @param root
 	 *            the root {@link BinaryTreeNode} to examine
 	 * @throws NullPointerException
@@ -132,7 +45,7 @@ public interface BinaryTreeUtility {
 	 * depth of each node's children differs by at most some tolerance. Given a
 	 * {@link BinaryTreeNode} and a tolerance, returns {@code true} if
 	 * {@code root} is balanced and {@code false} otherwise.
-	 * 
+	 *
 	 * @param root
 	 *            the root {@link BinaryTreeNode} to examine
 	 * @param tolerance the maximum tolerance to decide if the tree is balanced
@@ -159,7 +72,7 @@ public interface BinaryTreeUtility {
 	 * Given a {@link BinaryTreeNode}, returns {@code true} if {@code root} is a
 	 * Binary Search Tree and {@code false} otherwise.
 	 * </p>
-	 * 
+	 *
 	 * @param root
 	 *            the {@link BinaryTreeNode} to examine
 	 * @return {@code true} if {@code root} is a Binary Search Tree and
@@ -169,4 +82,88 @@ public interface BinaryTreeUtility {
 	 */
 	<T extends Comparable<? super T>> boolean isBST(
 			BinaryTreeNode<T> root);
+
+	/**
+	 * <p>
+	 * Creates a new {@link Iterator} that traverses the specified
+	 * {@link BinaryTreeNode} in pre-order.
+	 * </p>
+	 * <p>
+	 * The remove method of the returned {@link Iterator} is not supported and
+	 * any call to it will result in an {@link UnsupportedOperationException}.
+	 * </p>
+	 * <p>
+	 * This method is guaranteed to return in O(1) time. That is, it should not
+	 * compute the entire order of traversal ahead of time.
+	 * </p>
+	 * <p>
+	 * If the data in the underlying {@link BinaryTreeNode} or its children is
+	 * modified, using the {@link Iterator} is unknown.
+	 * </p>
+	 *
+	 * @param root
+	 *            the root {@link BinaryTreeNode} to use for this
+	 *            {@link Iterator}
+	 * @return a new {@link Iterator} that traverses the specified
+	 *         {@link BinaryTreeNode} in pre-order.
+	 * @throws NullPointerException
+	 *             if root is {@code null}
+	 */
+	<T> Iterator<T> getPreorderIterator(BinaryTreeNode<T> root);
+
+	/**
+	 * <p>
+	 * Creates a new {@link Iterator} that traverses the specified
+	 * {@link BinaryTreeNode} in in-order.
+	 * </p>
+	 * <p>
+	 * The remove method of the returned {@link Iterator} is not supported and
+	 * any call to it will result in an {@link UnsupportedOperationException}.
+	 * </p>
+	 * <p>
+	 * This method is guaranteed to return in O(1) time. That is, it should not
+	 * compute the entire order of traversal ahead of time.
+	 * </p>
+	 * <p>
+	 * If the data in the underlying {@link BinaryTreeNode} or its children is
+	 * modified, using the {@link Iterator} is unknown.
+	 * </p>
+	 *
+	 * @param root
+	 *            the root {@link BinaryTreeNode} to use for this
+	 *            {@link Iterator}
+	 * @return a new {@link Iterator} that traverses the specified
+	 *         {@link BinaryTreeNode} in in-order.
+	 * @throws NullPointerException
+	 *             if root is {@code null}
+	 */
+	<T> Iterator<T> getInorderIterator(BinaryTreeNode<T> root);
+
+	/**
+	 * <p>
+	 * Creates a new {@link Iterator} that traverses the specified
+	 * {@link BinaryTreeNode} in post-order.
+	 * </p>
+	 * <p>
+	 * The remove method of the returned {@link Iterator} is not supported and
+	 * any call to it will result in an {@link UnsupportedOperationException}.
+	 * </p>
+	 * <p>
+	 * This method is guaranteed to return in O(1) time. That is, it should not
+	 * compute the entire order of traversal ahead of time.
+	 * </p>
+	 * <p>
+	 * If the data in the underlying {@link BinaryTreeNode} or its children is
+	 * modified, using the {@link Iterator} is unknown.
+	 * </p>
+	 *
+	 * @param root
+	 *            the root {@link BinaryTreeNode} to use for this
+	 *            {@link Iterator}
+	 * @return a new {@link Iterator} that traverses the specified
+	 *         {@link BinaryTreeNode} in post-order.
+	 * @throws NullPointerException
+	 *             if root is {@code null}
+	 */
+	<T> Iterator<T> getPostorderIterator(BinaryTreeNode<T> root);
 }

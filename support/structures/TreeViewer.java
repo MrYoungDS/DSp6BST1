@@ -53,9 +53,14 @@ public class TreeViewer {
 	}
 
 	public static void main(String[] args) {
-		BinaryTreeNode<Integer> tree = node(
-				node(node(null, 6, null), 3, node(null, 7, null)), 5,
-				node(node(node(null, 4, null), 1, null), 19, null));
+		BinaryTreeNode<Integer> tree =
+				node(
+						node(
+								node(null, 1, null), 3, node(null, 2, null)),
+						5,
+						node(
+								node(
+										node(null, 4, null), 1, null), 19, null));
 		System.out.println(toDotFormat(tree));
 	}
 }
